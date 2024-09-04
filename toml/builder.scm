@@ -1,4 +1,4 @@
-(define-module (toml builder)
+(define-module (hylophile toml builder)
   #:use-module (srfi srfi-1)
   #:use-module (json)
   #:use-module (srfi srfi-19)

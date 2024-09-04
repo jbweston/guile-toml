@@ -1,5 +1,5 @@
-(define-module (toml parser)
-  #:use-module (toml parser-peg)
+(define-module (hylophile toml parser)
+  #:use-module (hylophile toml parser-peg)
   #:use-module (ice-9 peg)
   #:use-module (ice-9 textual-ports)
   #:use-module (ice-9 pretty-print)
