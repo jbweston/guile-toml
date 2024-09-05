@@ -86,6 +86,10 @@
   (put-string port (escape-control-characters s #t))
   (put-string port surround))
 
+(define (toml-build-boolean s port)
+  (put-string port (if s "true" "false")))
+
+
 (define (toml-build-key-string s port)
   (define quote-type (if (or
                           (string-contains s "\\")
@@ -198,7 +202,7 @@
        (scm port #:key (newline? #t) (inline? #f))
      (cond
       ;; ((eq? scm null) (toml-build-null port))
-      ;; ((boolean? scm) (toml-build-boolean scm port))
+      ((boolean? scm) (toml-build-boolean scm port))
       ;; ((symbol? scm) (toml-build-string (symbol->string scm) port))
 
       ;; TODO float (nan, inf)
